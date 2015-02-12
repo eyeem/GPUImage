@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BCF1A34314DDB1EC00852800"
-               BuildableName = "GPUImageTests.octest"
+               BuildableName = "GPUImageTests.xctest"
                BlueprintName = "GPUImageTests"
                ReferencedContainer = "container:GPUImage.xcodeproj">
             </BuildableReference>

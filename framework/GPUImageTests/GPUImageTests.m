@@ -18,7 +18,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in GPUImageTests");
+    XCTFail(@"Unit tests are not implemented yet in GPUImageTests");
 }
 
 @end

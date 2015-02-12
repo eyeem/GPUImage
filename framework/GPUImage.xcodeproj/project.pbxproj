@@ -306,7 +306,6 @@
 		BCD907D315CDEE930019C556 /* GPUImageAddBlendFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD907D115CDEE930019C556 /* GPUImageAddBlendFilter.h */; };
 		BCD907D415CDEE930019C556 /* GPUImageAddBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD907D215CDEE930019C556 /* GPUImageAddBlendFilter.m */; };
 		BCF1A33814DDB1EC00852800 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF1A33714DDB1EC00852800 /* Foundation.framework */; };
-		BCF1A34614DDB1EC00852800 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF1A34514DDB1EC00852800 /* SenTestingKit.framework */; };
 		BCF1A34914DDB1EC00852800 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF1A33714DDB1EC00852800 /* Foundation.framework */; };
 		BCF1A34C14DDB1EC00852800 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF1A33414DDB1EC00852800 /* libGPUImage.a */; };
 		BCF1A35214DDB1EC00852800 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCF1A35014DDB1EC00852800 /* InfoPlist.strings */; };
@@ -653,8 +652,7 @@
 		BCF1A33414DDB1EC00852800 /* libGPUImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGPUImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF1A33714DDB1EC00852800 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BCF1A33B14DDB1EC00852800 /* GPUImage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GPUImage-Prefix.pch"; path = "Source/iOS/GPUImage-Prefix.pch"; sourceTree = "<group>"; };
-		BCF1A34414DDB1EC00852800 /* GPUImageTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPUImageTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCF1A34514DDB1EC00852800 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		BCF1A34414DDB1EC00852800 /* GPUImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPUImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF1A34F14DDB1EC00852800 /* GPUImageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GPUImageTests-Info.plist"; sourceTree = "<group>"; };
 		BCF1A35114DDB1EC00852800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BCF1A35314DDB1EC00852800 /* GPUImageTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageTests.h; sourceTree = "<group>"; };
@@ -720,7 +718,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF1A34614DDB1EC00852800 /* SenTestingKit.framework in Frameworks */,
 				BCF1A34914DDB1EC00852800 /* Foundation.framework in Frameworks */,
 				BCF1A34C14DDB1EC00852800 /* libGPUImage.a in Frameworks */,
 			);
@@ -1117,7 +1114,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF1A33414DDB1EC00852800 /* libGPUImage.a */,
-				BCF1A34414DDB1EC00852800 /* GPUImageTests.octest */,
+				BCF1A34414DDB1EC00852800 /* GPUImageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1132,7 +1129,6 @@
 				BCB5E77014E20B8A00701302 /* AVFoundation.framework */,
 				BCB5E76E14E20B7F00701302 /* UIKit.framework */,
 				BCF1A33714DDB1EC00852800 /* Foundation.framework */,
-				BCF1A34514DDB1EC00852800 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1387,8 +1383,8 @@
 			);
 			name = GPUImageTests;
 			productName = GPUImageTests;
-			productReference = BCF1A34414DDB1EC00852800 /* GPUImageTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = BCF1A34414DDB1EC00852800 /* GPUImageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1396,6 +1392,7 @@
 		BCF1A32B14DDB1EC00852800 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Brad Larson";
 			};
@@ -1776,13 +1773,12 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Source/GPUImage-Prefix.pch";
+				GCC_PREFIX_HEADER = "Source/iOS/GPUImage-Prefix.pch";
 				INFOPLIST_FILE = "GPUImageTests/GPUImageTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1792,13 +1788,12 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Source/GPUImage-Prefix.pch";
+				GCC_PREFIX_HEADER = "Source/iOS/GPUImage-Prefix.pch";
 				INFOPLIST_FILE = "GPUImageTests/GPUImageTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
